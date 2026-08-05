@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact — FlightFoundry</title>
+<meta name="description" content="Request access to FlightFoundry.">
+<meta name="theme-color" content="#07080a">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body data-page="contact">
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav" id="nav" aria-label="Primary">
+  <a class="nav__brand" href="index.html" aria-label="FlightFoundry home">
+    <svg class="nav__mark" viewBox="0 0 24 24" aria-hidden="true">
+      <g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+        <path d="M17.05 8.4 A7.1 7.1 0 1 0 17.05 15.6"/>
+        <path d="M6.9 16.1 C10.2 13.1 12.6 12 20.2 12"/>
+      </g>
+      <rect x="20.1" y="10.6" width="2.8" height="2.8" fill="var(--sig)"/>
+      <circle class="mark__pulse" r="1.15" fill="var(--sig)" style="offset-path:path('M6.9 16.1 C10.2 13.1 12.6 12 20.2 12')"/>
+    </svg>
+    <span class="nav__word">FlightFoundry</span>
+  </a>
+  <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="navlinks">Menu</button>
+  <div class="nav__links" id="navlinks">
+    <a href="system.html">System</a>
+    <a href="research.html">Research</a>
+    <a href="company.html">Company</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a class="btn nav__cta" href="contact.html">Request access</a>
+</nav>
+<main class="page" id="main">
+  <div class="wrap">
+    <header class="masthead">
+      <div>
+        <p class="mono masthead__eyebrow">Request access</p>
+        <h1 class="h1">Tell us what you are trying to make reliable.</h1>
+      </div>
+      <p class="masthead__lede">FlightFoundry is built with autonomy teams, around their stack, their simulator and their failures. The more specific you are, the more useful the first conversation is.</p>
+    </header>
+
+    <section class="sec">
+      <div class="sec__grid">
+        <div class="sec__label"><p class="mono">01</p><h2 class="h2">Contact</h2></div>
+        <div class="sec__body">
+          <form class="form" id="access-form" novalidate>
+            <div class="field">
+              <label for="f-name">Name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name">
+            </div>
+            <div class="field">
+              <label for="f-email">Work email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required placeholder="you@company.com">
+            </div>
+            <div class="field">
+              <label for="f-company">Company / lab</label>
+              <input id="f-company" name="company" type="text" autocomplete="organization" placeholder="Organisation">
+            </div>
+            <div class="field">
+              <label for="f-role">Role</label>
+              <select id="f-role" name="role">
+                <option value="">Select…</option>
+                <option>Autonomy engineer</option>
+                <option>Perception</option>
+                <option>Planning &amp; controls</option>
+                <option>Navigation / state estimation</option>
+                <option>Simulation &amp; test</option>
+                <option>Safety / certification</option>
+                <option>Engineering leadership</option>
+                <option>Research</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field field--wide">
+              <label for="f-building">What are you building?</label>
+              <textarea id="f-building" name="building" placeholder="Aircraft, mission, autonomy stack, where it flies."></textarea>
+            </div>
+            <div class="field field--wide">
+              <label for="f-help">How can FlightFoundry help?</label>
+              <textarea id="f-help" name="help" placeholder="The failure you keep coming back to."></textarea>
+            </div>
+            <div class="form__actions">
+              <button class="btn btn--solid" type="submit">Send request</button>
+              <span class="form__msg" id="form-msg"></span>
+            </div>
+          </form>
+          <p class="note" style="margin-top:2rem">This is a static build with no server attached: submitting composes the request in your own mail client. Replace the handler in assets/js/pages.js to point at your backend.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div class="foot__brand">
+        <div class="foot__word">FlightFoundry</div>
+        <p class="foot__tag">Make autonomy earn its next flight.</p>
+      </div>
+      <nav class="foot__nav" aria-label="Footer">
+        <a href="system.html">System</a>
+        <a href="research.html">Research</a>
+        <a href="company.html">Company</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="foot__base">
+      <span>FlightFoundry</span>
+      <span>Figures on this site are computed live by a demonstration model</span>
+    </div>
+  </div>
+</footer>
+<script type="module" src="assets/js/ui/nav.js"></script>
+<script type="module" src="assets/js/pages.js"></script>
+</body>
+</html>

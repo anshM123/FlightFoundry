@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>System — FlightFoundry</title>
+<meta name="description" content="How FlightFoundry discovers, isolates, diagnoses, repairs, verifies and releases improvements to autonomous flight software.">
+<meta name="theme-color" content="#07080a">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body data-page="system">
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav" id="nav" aria-label="Primary">
+  <a class="nav__brand" href="index.html" aria-label="FlightFoundry home">
+    <svg class="nav__mark" viewBox="0 0 24 24" aria-hidden="true">
+      <g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+        <path d="M17.05 8.4 A7.1 7.1 0 1 0 17.05 15.6"/>
+        <path d="M6.9 16.1 C10.2 13.1 12.6 12 20.2 12"/>
+      </g>
+      <rect x="20.1" y="10.6" width="2.8" height="2.8" fill="var(--sig)"/>
+      <circle class="mark__pulse" r="1.15" fill="var(--sig)" style="offset-path:path('M6.9 16.1 C10.2 13.1 12.6 12 20.2 12')"/>
+    </svg>
+    <span class="nav__word">FlightFoundry</span>
+  </a>
+  <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="navlinks">Menu</button>
+  <div class="nav__links" id="navlinks">
+    <a href="system.html">System</a>
+    <a href="research.html">Research</a>
+    <a href="company.html">Company</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a class="btn nav__cta" href="contact.html">Request access</a>
+</nav>
+<main class="page" id="main">
+  <div class="wrap">
+    <header class="masthead">
+      <div>
+        <p class="mono masthead__eyebrow">System</p>
+        <h1 class="h1">A continuous improvement loop for physical autonomy.</h1>
+      </div>
+      <p class="masthead__lede">A drone autonomy company connects its autonomy stack, simulator, flight logs, aircraft and sensor configuration, training data and operating conditions. FlightFoundry runs the loop that turns what goes wrong into what ships next.</p>
+    </header>
+
+    <section class="sec">
+      <div class="sec__grid">
+        <div class="sec__label"><p class="mono">01</p><h2 class="h2">The loop</h2></div>
+        <div class="sec__body">
+          <div class="stages">
+      <div class="stage">
+        <div class="stage__n">01</div>
+        <div>
+          <h3 class="stage__t">Find where autonomy breaks.</h3>
+          <p class="stage__d">FlightFoundry searches simulation and accumulated operational data for failure modes, edge cases and regions where system performance is fragile. Rather than waiting for engineers to stumble into failures manually, the system actively searches for them.</p>
+          <p class="stage__meta"><span>inputs: flight logs, simulator, operating envelope</span><span>outputs: ranked failure regions</span></p>
+        </div>
+      </div>
+      <div class="stage">
+        <div class="stage__n">02</div>
+        <div>
+          <h3 class="stage__t">Turn messy failures into useful counterexamples.</h3>
+          <p class="stage__d">A real flight can contain thousands of simultaneous variables. FlightFoundry searches for smaller, cleaner scenarios that preserve the mechanism responsible for a failure, so that a twelve-minute mission becomes a specific combination of conditions that reproduces it.</p>
+          <p class="stage__meta"><span>method: scenario reduction against the same model</span><span>outputs: minimal reproducing scenario</span></p>
+        </div>
+      </div>
+      <div class="stage">
+        <div class="stage__n">03</div>
+        <div>
+          <h3 class="stage__t">Determine why the system failed.</h3>
+          <p class="stage__d">Evidence is connected across logs, simulation state, perception, planning, control, sensors, model outputs and operating conditions to identify the most likely failure mechanism. The output is not an anomaly alert; it is an actionable diagnosis.</p>
+          <p class="stage__meta"><span>outputs: causal chain with timestamps</span></p>
+        </div>
+      </div>
+      <div class="stage">
+        <div class="stage__n">04</div>
+        <div>
+          <h3 class="stage__t">Convert failure information into improvement.</h3>
+          <p class="stage__d">FlightFoundry can identify relevant prior experience, generate new training or simulation scenarios, recommend parameter or system changes, and drive increasingly automated repair workflows — building a growing institutional memory of failure, mechanism, corrective experience, repair and outcome.</p>
+          <p class="stage__meta"><span>outputs: candidate autonomy version</span></p>
+        </div>
+      </div>
+      <div class="stage">
+        <div class="stage__n">05</div>
+        <div>
+          <h3 class="stage__t">Prove that the fix actually helped.</h3>
+          <p class="stage__d">A repair system cannot be trusted to grade its own homework, so improvement is separated from evaluation. Candidate versions are tested against protected evaluation scenarios and compared against the currently deployed version. A candidate must demonstrate the intended improvement while avoiding unacceptable regressions elsewhere.</p>
+          <p class="stage__meta"><span>gates: target improvement, regression sweep</span></p>
+        </div>
+      </div>
+      <div class="stage">
+        <div class="stage__n">06</div>
+        <div>
+          <h3 class="stage__t">Ship improvement, not hope.</h3>
+          <p class="stage__d">FlightFoundry produces an evidence-backed release recommendation: what failed, why it failed, what changed, where the candidate improved, where performance changed elsewhere, whether regressions appeared, and whether the new system should replace the incumbent. Then the loop begins again.</p>
+          <p class="stage__meta"><span>outputs: release recommendation</span></p>
+        </div>
+      </div>
+          </div>
+          <figure class="fig"><div id="fig-loop"></div><figcaption>Every deployment produces evidence; every verified improvement expands what the aircraft is allowed to do.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec__grid">
+        <div class="sec__label"><p class="mono">02</p><h2 class="h2">A worked example</h2></div>
+        <div class="sec__body">
+          <p class="body">The demonstration model that runs on this site flies an inspection corridor <span data-val="corridor">—</span> wide under degraded conditions. The deployed configuration commits to a low-confidence estimate of where the corridor is, corrects far too late, saturates its lateral authority at <span data-val="sat-time">—</span> and loses separation at <span data-val="fail-time">—</span>, finishing <span data-val="incident-margin">—</span> against a <span data-val="requirement">—</span> requirement.</p>
+          <p class="body">The candidate configuration refuses to steer on an estimate below its confidence gate, replans twice as often, and compensates for the steady crosswind. Run against the identical scenario it clears the corridor by <span data-val="candidate-margin">—</span>.</p>
+          <figure class="fig"><div id="fig-trajectory"></div><figcaption></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec__grid">
+        <div class="sec__label"><p class="mono">03</p><h2 class="h2">Searching the envelope</h2></div>
+        <div class="sec__body">
+          <p class="body">Discovery samples the operating space and executes the autonomy stack against each condition. Failure regions are not annotated by hand; they emerge, and the dimensions that actually explain them can be ranked against the dimensions that merely co-occurred.</p>
+          <figure class="fig"><div id="fig-sensitivity"></div><figcaption></figcaption></figure>
+          <p class="callout">A counterexample is only useful once everything that was not the cause has been taken out of it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec__grid">
+        <div class="sec__label"><p class="mono">04</p><h2 class="h2">What connects</h2></div>
+        <div class="sec__body">
+          <table class="spec">
+            <tr><th>Autonomy stack</th><td>The system under improvement: perception, state estimation, planning, control, and the policies and models inside them.</td></tr>
+            <tr><th>Simulator</th><td>Where scenarios are executed, reduced and replayed.</td></tr>
+            <tr><th>Flight logs</th><td>Operational evidence from real deployments — the source of the failures worth searching around.</td></tr>
+            <tr><th>Aircraft &amp; sensor configuration</th><td>Airframe, propulsion, sensing and the limits that determine what is recoverable.</td></tr>
+            <tr><th>Training data</th><td>The corpus corrective experience is retrieved from and added to.</td></tr>
+            <tr><th>Operating conditions</th><td>The envelope the aircraft is expected to survive, and the dimensions the search runs over.</td></tr>
+            <tr><th>Protected evaluation</th><td>Held separately from everything above. The repair process does not see inside it.</td></tr>
+          </table>
+          <p class="note">Version identifiers, margins and scenario counts shown across this site are produced by a demonstration model running in your browser. They are not customer results.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div class="foot__brand">
+        <div class="foot__word">FlightFoundry</div>
+        <p class="foot__tag">Make autonomy earn its next flight.</p>
+      </div>
+      <nav class="foot__nav" aria-label="Footer">
+        <a href="system.html">System</a>
+        <a href="research.html">Research</a>
+        <a href="company.html">Company</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="foot__base">
+      <span>FlightFoundry</span>
+      <span>Figures on this site are computed live by a demonstration model</span>
+    </div>
+  </div>
+</footer>
+<script type="module" src="assets/js/ui/nav.js"></script>
+<script type="module" src="assets/js/pages.js"></script>
+</body>
+</html>

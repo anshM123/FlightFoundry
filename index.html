@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="film">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FlightFoundry — Continuous improvement for autonomous flight</title>
+<meta name="description" content="FlightFoundry is the continuous improvement system for autonomous flight. It discovers failures, isolates counterexamples, diagnoses mechanisms, proposes repairs and verifies them against a protected independent evaluator.">
+<meta name="theme-color" content="#07080a">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="FlightFoundry">
+<meta property="og:description" content="Make autonomy earn its next flight.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body data-page="home">
+
+<a class="skip" href="#film">Skip to content</a>
+
+<nav class="nav" id="nav" aria-label="Primary">
+  <a class="nav__brand" href="index.html" aria-label="FlightFoundry home">
+    <svg class="nav__mark" viewBox="0 0 24 24" aria-hidden="true">
+      <g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+        <path d="M17.05 8.4 A7.1 7.1 0 1 0 17.05 15.6"/>
+        <path id="mark-traj" d="M6.9 16.1 C10.2 13.1 12.6 12 20.2 12"/>
+      </g>
+      <rect x="20.1" y="10.6" width="2.8" height="2.8" fill="var(--sig)"/>
+      <circle class="mark__pulse" r="1.15" fill="var(--sig)" style="offset-path:path('M6.9 16.1 C10.2 13.1 12.6 12 20.2 12')"/>
+    </svg>
+    <span class="nav__word">FlightFoundry</span>
+    <span class="nav__instr mono" id="nav-instr" aria-hidden="true">
+      <span data-instr="sim">SIM 01</span><span data-instr="state">STATE NOMINAL</span><span data-instr="t">T+00.0</span>
+    </span>
+  </a>
+  <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="navlinks">Menu</button>
+  <div class="nav__links" id="navlinks">
+    <a href="system.html">System</a>
+    <a href="research.html">Research</a>
+    <a href="company.html">Company</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a class="btn nav__cta" href="contact.html">Request access</a>
+</nav>
+
+<!-- ============================ WEBGL STAGE ============================ -->
+<div id="stage" aria-hidden="true">
+  <canvas id="gl"></canvas>
+  <div id="labels"></div>
+
+  <div id="hud" class="hud">
+    <div class="hud__head mono">
+      <span id="hud-sim">SIM 01 · TEST RANGE 04</span>
+      <span id="hud-state" class="hud__state" data-state="nominal">NOMINAL</span>
+    </div>
+    <dl class="hud__tel" id="hud-tel">
+      <div><dt>ALT</dt><dd data-tel="alt">—</dd></div>
+      <div><dt>VEL</dt><dd data-tel="vel">—</dd></div>
+      <div><dt>WIND</dt><dd data-tel="wind">—</dd></div>
+      <div><dt>PERCEPTION</dt><dd data-tel="perc">—</dd></div>
+      <div><dt>LOCALIZATION</dt><dd data-tel="loc">—</dd></div>
+      <div><dt>PLANNER</dt><dd data-tel="plan">—</dd></div>
+      <div><dt>CONTROL</dt><dd data-tel="ctrl">—</dd></div>
+      <div><dt>POLICY</dt><dd data-tel="policy">—</dd></div>
+    </dl>
+  </div>
+
+  <div id="scrim" class="scrim"></div>
+</div>
+
+<div class="stagenote mono" id="stagenote">
+  <span>Every figure on this page is computed live by a demonstration autonomy model running in your browser. No customer data.</span>
+</div>
+
+<button class="sound" id="sound" aria-pressed="false" title="Sound is off">
+  <span class="sound__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  <span class="mono">Sound</span>
+</button>
+
+<!-- ============================ FILM ============================ -->
+<main id="film">
+
+  <!-- 01 ---------------------------------------------------------- -->
+  <section class="act" data-act="hero" style="--len:120">
+    <div class="act__hold">
+      <div class="wrap hero">
+        <p class="mono hero__eyebrow">Continuous improvement for autonomous flight</p>
+        <h1 class="display hero__title"><span>Better every</span><span>time it fails.</span></h1>
+        <div class="hero__foot">
+          <p class="lede hero__lede">FlightFoundry turns every failure of an autonomous aircraft into a verified improvement — discovered, isolated, diagnosed, repaired and independently evaluated before it is allowed to fly again.</p>
+          <p class="mono hero__scroll"><span class="scrollrule"></span>Scroll to begin the flight</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 ---------------------------------------------------------- -->
+  <section class="act" data-act="departure" style="--len:80">
+    <div class="act__hold">
+      <div class="wrap copy copy--center">
+        <p class="mono">Autonomy under test</p>
+        <p class="h2">A plan, a world, and a system that has to survive the difference.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 ---------------------------------------------------------- -->
+  <section class="act" data-act="flight" style="--len:150">
+    <div class="act__hold">
+      <div class="wrap copy copy--left">
+        <p class="mono">01 — Flight</p>
+        <p class="h3">Perception, state estimation, planning and control, closing a loop at 25&nbsp;Hz against a structure it has to fly through.</p>
+        <p class="body">The predicted path runs ahead of the aircraft. The flown path trails behind it. While the two agree, the autonomy stack understands the world it is in.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 ---------------------------------------------------------- -->
+  <section class="act" data-act="degrade" style="--len:140">
+    <div class="act__hold">
+      <div class="wrap copy copy--left">
+        <p class="mono mono--warn">Conditions degrading</p>
+        <p class="h3">Low contrast. Crosswind. A thin structural member against a dark background.</p>
+        <p class="body">Perception confidence falls. The estimate of where the corridor actually is drifts, and the uncertainty around it widens. Nothing has failed yet. Everything required for failure is now present.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 ---------------------------------------------------------- -->
+  <section class="act" data-act="failure" style="--len:110">
+    <div class="act__hold">
+      <div class="wrap failure">
+        <h2 class="display failure__word">Failure.</h2>
+        <dl class="failure__meta mono" id="failure-meta"></dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 ---------------------------------------------------------- -->
+  <section class="act" data-act="disassembly" style="--len:170">
+    <div class="act__hold">
+      <div class="wrap copy copy--right">
+        <p class="mono">02 — Evidence</p>
+        <p class="h2">Failures are unfinished experiments.</p>
+        <p class="body">A flight is not a single event. Open it and time becomes an axis: sensor returns, confidence, the estimator's belief, the planner's commitments, the control effort that ran out of authority. The incident stops being a story and becomes data.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 ---------------------------------------------------------- -->
+  <section class="act" data-act="discover" style="--len:180">
+    <div class="act__hold">
+      <div class="wrap copy copy--left">
+        <p class="mono mono--sig">Discover</p>
+        <p class="h2">Find where autonomy breaks.</p>
+        <p class="body">FlightFoundry searches simulation and accumulated operational data for failure modes, edge cases and regions where performance is fragile. Rather than waiting for engineers to stumble into failures, the system goes looking for them.</p>
+        <ul class="axes mono" id="axes-list"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 ---------------------------------------------------------- -->
+  <section class="act" data-act="isolate" style="--len:200">
+    <div class="act__hold">
+      <div class="wrap copy copy--right">
+        <p class="mono mono--sig">Isolate</p>
+        <p class="h2">Turn messy failures into useful counterexamples.</p>
+        <p class="body">A real flight contains thousands of simultaneous variables. FlightFoundry searches for the smallest scenario that still preserves the mechanism — relaxing every condition that was never the cause, and keeping only what the failure actually needs.</p>
+        <div class="ladder" id="ladder"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 ---------------------------------------------------------- -->
+  <section class="act" data-act="diagnose" style="--len:180">
+    <div class="act__hold">
+      <div class="wrap copy copy--left">
+        <p class="mono mono--sig">Diagnose</p>
+        <p class="h2">Find the mechanism, not just the anomaly.</p>
+        <p class="body">Evidence is connected across logs, simulation state, perception, planning, control, sensors and operating conditions until one chain explains the outcome. The result is not an alert. It is a diagnosis with timestamps.</p>
+        <ol class="chain mono" id="chain"></ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 ---------------------------------------------------------- -->
+  <section class="act" data-act="repair" style="--len:160">
+    <div class="act__hold">
+      <div class="wrap copy copy--right">
+        <p class="mono mono--sig">Repair</p>
+        <p class="h2">Turn counterexamples into corrective experience.</p>
+        <p class="body">The minimal counterexample becomes the centre of a new distribution: variations in lighting, angle, wind, geometry and closing speed. Relevant prior experience is retrieved, new scenarios are generated, and targeted model, data, parameter or system changes are proposed.</p>
+        <div class="delta" id="delta"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 ---------------------------------------------------------- -->
+  <section class="act" data-act="verify" style="--len:230">
+    <div class="act__hold">
+      <div class="wrap copy copy--left">
+        <p class="mono mono--sig">Verify</p>
+        <p class="h2">The system improving autonomy shouldn't grade its own homework.</p>
+        <p class="body">Improvement and evaluation are separated. Candidate versions are run against protected scenarios the repair process cannot see, and compared against the version currently deployed. A candidate must demonstrate the intended improvement without unacceptable regressions anywhere else in the envelope.</p>
+        <div class="gates" id="gates"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 ---------------------------------------------------------- -->
+  <section class="act" data-act="verdict" style="--len:90">
+    <div class="act__hold">
+      <div class="wrap verdict">
+        <h2 class="display verdict__word">Improvement<br>verified.</h2>
+        <p class="mono verdict__sub" id="verdict-sub"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 ---------------------------------------------------------- -->
+  <section class="act" data-act="seal" style="--len:190">
+    <div class="act__hold">
+      <div class="wrap copy copy--center seal">
+        <p class="mono mono--sig">Research — SEAL</p>
+        <h2 class="h1">What happens when a robot learns from its own exam?</h2>
+        <p class="body">A continually improving system that is repeatedly measured against the same protected evaluation will, given enough attempts, begin to learn the evaluation itself. SEAL is FlightFoundry's research direction on that problem: how much information may leave a protected evaluator before the evaluation stops meaning anything.</p>
+        <div class="budget" id="budget"></div>
+        <p class="mono seal__note">Active research direction. No results are claimed here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14 ---------------------------------------------------------- -->
+  <section class="act" data-act="loop" style="--len:160">
+    <div class="act__hold">
+      <div class="wrap copy copy--center">
+        <p class="mono">The loop</p>
+        <p class="h2">Ship improvement, not hope.</p>
+        <p class="body">Every deployment produces evidence. Every failure becomes a counterexample. Every counterexample becomes an experiment. Every experiment can produce a repair. Every repair faces independent evaluation. Then the aircraft flies again.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15 ---------------------------------------------------------- -->
+  <section class="act act--doc" data-act="platform" style="--len:150">
+    <div class="wrap doc">
+      <div class="doc__col">
+        <p class="mono">What it is</p>
+        <p class="h3">FlightFoundry is not a fleet dashboard, a mission planner, an observability tool, a data generator or another simulator. It sits above all of them.</p>
+      </div>
+      <div class="doc__col">
+        <p class="body">It is the improvement infrastructure connecting failures, simulations, data, models, autonomy software, evaluation and deployment — effectively a CI/CD system for physical autonomy. Instead of asking whether the software compiles, it asks whether the aircraft actually became better.</p>
+        <p class="body">Its advantage compounds. Across aircraft, sensors, environments, autonomy stacks and missions, FlightFoundry can accumulate knowledge about recurring failure mechanisms and the kinds of corrective experience that actually resolve them — a failure-to-repair intelligence layer no single fleet can build alone.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 16 ---------------------------------------------------------- -->
+  <section class="act act--doc" data-act="audience" style="--len:120">
+    <div class="wrap doc">
+      <div class="doc__col">
+        <p class="mono">Who it is for</p>
+        <p class="h3">The user is the autonomy engineer. The customer is the organisation responsible for making autonomous aircraft reliable.</p>
+      </div>
+      <div class="doc__col">
+        <ul class="who">
+          <li>Drone autonomy startups</li>
+          <li>UAV manufacturers</li>
+          <li>Delivery-drone companies</li>
+          <li>Industrial inspection companies</li>
+          <li>Warehouse and logistics robotics</li>
+          <li>Aerial robotics laboratories</li>
+          <li>Navigation, perception, planning and controls teams</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 17 ---------------------------------------------------------- -->
+  <section class="act" data-act="return" style="--len:180">
+    <div class="act__hold">
+      <div class="wrap copy copy--left">
+        <p class="mono mono--pass" id="return-tag">Candidate active — v27.5</p>
+        <p class="h2">The same aircraft. The same weather. The same corridor.</p>
+        <p class="body">Identical scenario, identical initial conditions, one different autonomy version. This time the estimate is not trusted until it is worth trusting, and the aircraft flies the corridor it was always supposed to fly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 18 ---------------------------------------------------------- -->
+  <section class="act" data-act="cta" style="--len:170">
+    <div class="act__hold">
+      <div class="wrap cta">
+        <h2 class="display cta__word"><span>Make autonomy</span><span>earn its next flight.</span></h2>
+        <div class="cta__row">
+          <a class="btn btn--solid" href="contact.html">Request access</a>
+          <a class="btn" href="research.html">Explore the research</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div class="foot__brand">
+        <div class="foot__word">FlightFoundry</div>
+        <p class="foot__tag">Make autonomy earn its next flight.</p>
+      </div>
+      <nav class="foot__nav" aria-label="Footer">
+        <a href="system.html">System</a>
+        <a href="research.html">Research</a>
+        <a href="company.html">Company</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="foot__base">
+      <span>FlightFoundry</span>
+      <span id="fps-note"></span>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="assets/js/home.js"></script>
+<script type="module" src="assets/js/ui/nav.js"></script>
+</body>
+</html>

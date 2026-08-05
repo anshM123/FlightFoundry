@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Research — FlightFoundry</title>
+<meta name="description" content="SEAL: how much information may leave a protected evaluator before the evaluation stops meaning anything.">
+<meta name="theme-color" content="#07080a">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body data-page="research">
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav" id="nav" aria-label="Primary">
+  <a class="nav__brand" href="index.html" aria-label="FlightFoundry home">
+    <svg class="nav__mark" viewBox="0 0 24 24" aria-hidden="true">
+      <g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+        <path d="M17.05 8.4 A7.1 7.1 0 1 0 17.05 15.6"/>
+        <path d="M6.9 16.1 C10.2 13.1 12.6 12 20.2 12"/>
+      </g>
+      <rect x="20.1" y="10.6" width="2.8" height="2.8" fill="var(--sig)"/>
+      <circle class="mark__pulse" r="1.15" fill="var(--sig)" style="offset-path:path('M6.9 16.1 C10.2 13.1 12.6 12 20.2 12')"/>
+    </svg>
+    <span class="nav__word">FlightFoundry</span>
+  </a>
+  <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="navlinks">Menu</button>
+  <div class="nav__links" id="navlinks">
+    <a href="system.html">System</a>
+    <a href="research.html">Research</a>
+    <a href="company.html">Company</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a class="btn nav__cta" href="contact.html">Request access</a>
+</nav>
+<main class="page" id="main">
+  <div class="wrap">
+    <header class="masthead">
+      <div>
+        <p class="mono masthead__eyebrow">Research — SEAL</p>
+        <h1 class="h1">What happens when a robot learns from its own exam?</h1>
+      </div>
+      <p class="masthead__lede">FlightFoundry's protected evaluation layer is only meaningful for as long as the repair process cannot learn it. SEAL is the research direction on exactly that problem.</p>
+    </header>
+
+    <section class="sec">
+      <div class="sec__grid">
+        <div class="sec__label"><p class="mono">01</p><h2 class="h2">The tension</h2></div>
+        <div class="sec__body">
+          <p class="body">A continually improving system needs feedback from evaluation to improve. But a system that is repeatedly measured against the same reusable evaluation will, given enough attempts, begin to learn the evaluation itself rather than the capability the evaluation was standing in for.</p>
+          <p class="callout">Feedback must be useful enough to improve the system, and limited enough to preserve the integrity of the evaluation.</p>
+          <p class="body">Both ends of that statement are easy on their own. Unlimited feedback produces a repair loop that optimises against a fixed exam. No feedback produces a loop that cannot learn anything. The research question is what lies between them, and how to spend a finite information budget well.</p>
+          <figure class="fig"><div id="fig-seal"></div><figcaption>Improvement and evaluation are separated by construction. Only a constrained channel connects them.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec__grid">
+        <div class="sec__label"><p class="mono">02</p><h2 class="h2">Open questions</h2></div>
+        <div class="sec__body">
+          <div class="grid2">
+            <div class="card"><h3>Budgeting</h3><p>How should information released from a protected evaluator be measured, and what is a defensible allowance for a given release cadence?</p></div>
+            <div class="card"><h3>Channel design</h3><p>What form should feedback take — verdicts, aggregates, mechanisms — so that it remains useful for repair without disclosing the evaluation set?</p></div>
+            <div class="card"><h3>Detecting exam-learning</h3><p>What signals distinguish a candidate that genuinely improved from one that has adapted to the protected scenarios?</p></div>
+            <div class="card"><h3>Refresh policy</h3><p>When must protected scenarios be retired and regenerated, and what does that cost in comparability across versions?</p></div>
+          </div>
+          <p class="note">SEAL is an active research direction. No results, benchmarks or guarantees are claimed on this page.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec__grid">
+        <div class="sec__label"><p class="mono">03</p><h2 class="h2">Why it matters here</h2></div>
+        <div class="sec__body">
+          <p class="body">FlightFoundry's release recommendation is only as trustworthy as the evaluation behind it. If the evaluation degrades quietly as the loop runs, every downstream claim degrades with it — and the failure mode is invisible precisely because the numbers keep improving.</p>
+          <p class="body">That is why improvement and evaluation are separated in the product rather than in policy, and why the question of how much may leave the protected evaluator is treated as a research problem rather than a configuration setting.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div class="foot__brand">
+        <div class="foot__word">FlightFoundry</div>
+        <p class="foot__tag">Make autonomy earn its next flight.</p>
+      </div>
+      <nav class="foot__nav" aria-label="Footer">
+        <a href="system.html">System</a>
+        <a href="research.html">Research</a>
+        <a href="company.html">Company</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="foot__base">
+      <span>FlightFoundry</span>
+      <span>Figures on this site are computed live by a demonstration model</span>
+    </div>
+  </div>
+</footer>
+<script type="module" src="assets/js/ui/nav.js"></script>
+<script type="module" src="assets/js/pages.js"></script>
+</body>
+</html>

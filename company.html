@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Company — FlightFoundry</title>
+<meta name="description" content="FlightFoundry is the improvement infrastructure underneath autonomous aviation.">
+<meta name="theme-color" content="#07080a">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body data-page="company">
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav" id="nav" aria-label="Primary">
+  <a class="nav__brand" href="index.html" aria-label="FlightFoundry home">
+    <svg class="nav__mark" viewBox="0 0 24 24" aria-hidden="true">
+      <g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+        <path d="M17.05 8.4 A7.1 7.1 0 1 0 17.05 15.6"/>
+        <path d="M6.9 16.1 C10.2 13.1 12.6 12 20.2 12"/>
+      </g>
+      <rect x="20.1" y="10.6" width="2.8" height="2.8" fill="var(--sig)"/>
+      <circle class="mark__pulse" r="1.15" fill="var(--sig)" style="offset-path:path('M6.9 16.1 C10.2 13.1 12.6 12 20.2 12')"/>
+    </svg>
+    <span class="nav__word">FlightFoundry</span>
+  </a>
+  <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="navlinks">Menu</button>
+  <div class="nav__links" id="navlinks">
+    <a href="system.html">System</a>
+    <a href="research.html">Research</a>
+    <a href="company.html">Company</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a class="btn nav__cta" href="contact.html">Request access</a>
+</nav>
+<main class="page" id="main">
+  <div class="wrap">
+    <header class="masthead">
+      <div>
+        <p class="mono masthead__eyebrow">Company</p>
+        <h1 class="h1">The system that makes the system flying the drone continuously better.</h1>
+      </div>
+      <p class="masthead__lede">Aircraft today largely improve because engineers manually study what went wrong and design the next version. FlightFoundry exists to give autonomous machines an engineering infrastructure that learns from their failures systematically.</p>
+    </header>
+
+    <section class="sec">
+      <div class="sec__grid">
+        <div class="sec__label"><p class="mono">01</p><h2 class="h2">The problem</h2></div>
+        <div class="sec__body">
+          <p class="body">Autonomous-flight teams accumulate enormous amounts of failure information. A drone encounters glare. A localization system becomes unstable. A perception model misreads an unusual object. Wind creates a control regime that was poorly represented in training. A planner becomes overly conservative. A landing system fails under an unusual geometry. A software change solves one of those problems and quietly makes another scenario worse.</p>
+          <p class="body">Each failure contains information about how the autonomy system should improve. Most organisations do not have infrastructure that systematically converts those failures into verified improvements. FlightFoundry is that infrastructure.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec__grid">
+        <div class="sec__label"><p class="mono">02</p><h2 class="h2">What we are not</h2></div>
+        <div class="sec__body">
+          <div class="grid2">
+            <div class="card"><h3>Not a fleet dashboard</h3><p>We are not here to show you the state of your aircraft.</p></div>
+            <div class="card"><h3>Not mission planning</h3><p>We do not fly the drone or decide where it goes.</p></div>
+            <div class="card"><h3>Not observability</h3><p>Detecting an anomaly is the beginning of the work, not the end of it.</p></div>
+            <div class="card"><h3>Not synthetic data</h3><p>Generating scenarios is one step inside a longer loop.</p></div>
+            <div class="card"><h3>Not another simulator</h3><p>We sit above your simulator and use it.</p></div>
+            <div class="card"><h3>Not a coding agent</h3><p>Pointing a general-purpose agent at robotics software is not an improvement process.</p></div>
+          </div>
+          <p class="callout">FlightFoundry is the improvement infrastructure connecting failures, simulations, data, models, autonomy software, evaluation and deployment.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec__grid">
+        <div class="sec__label"><p class="mono">03</p><h2 class="h2">Who it is for</h2></div>
+        <div class="sec__body">
+          <div class="grid2">
+            <div class="card"><h3>Organisations</h3><p>Drone autonomy startups, UAV manufacturers, delivery-drone companies, industrial inspection companies, warehouse and logistics robotics companies, and aerial robotics laboratories.</p></div>
+            <div class="card"><h3>Teams</h3><p>Navigation, perception, planning and controls. The user is the autonomy engineer; the customer is the organisation responsible for making autonomous aircraft reliable.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec__grid">
+        <div class="sec__label"><p class="mono">04</p><h2 class="h2">Long-term vision</h2></div>
+        <div class="sec__body">
+          <p class="body">Every deployment produces evidence. Every failure becomes a counterexample. Every counterexample becomes an experiment. Every experiment can produce a repair. Every repair faces independent evaluation. And every verified improvement expands what autonomous aircraft can safely do.</p>
+          <p class="body">Its long-term advantage compounds as it observes more failures and repairs. Across customers, aircraft, sensors, environments, autonomy stacks and missions, FlightFoundry can build knowledge about recurring failure mechanisms and the types of corrective experience that actually solve them — a failure-to-repair intelligence layer for autonomous flight that no individual team can easily build from its own fleet alone.</p>
+          <p class="callout">Not the system that flies the drone. The system that makes the system flying the drone continuously better.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div class="foot__brand">
+        <div class="foot__word">FlightFoundry</div>
+        <p class="foot__tag">Make autonomy earn its next flight.</p>
+      </div>
+      <nav class="foot__nav" aria-label="Footer">
+        <a href="system.html">System</a>
+        <a href="research.html">Research</a>
+        <a href="company.html">Company</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="foot__base">
+      <span>FlightFoundry</span>
+      <span>Figures on this site are computed live by a demonstration model</span>
+    </div>
+  </div>
+</footer>
+<script type="module" src="assets/js/ui/nav.js"></script>
+<script type="module" src="assets/js/pages.js"></script>
+</body>
+</html>
